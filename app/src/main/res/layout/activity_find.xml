@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/idEditTextMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="минимальное значение"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/idEditTextMax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="максимальное значение"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/idBtnFind"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="find"
+            android:text="Найти" />
+
+        <Button
+            android:id="@+id/idBtnExit"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="exit"
+            android:text="Назад" />
+
+    </LinearLayout>
+
+</LinearLayout>

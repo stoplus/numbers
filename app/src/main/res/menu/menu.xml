@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/idItemAdd"
+        android:title="Добавить запись" />
+    <item
+        android:id="@+id/idItemDelete"
+        android:title="Удалить запись" />
+    <item
+        android:id="@+id/idItemSortByValue"
+        android:title="Сортировать по значению" />
+    <item
+        android:id="@+id/idItemSortByKey"
+        android:title="Сортировать по ключу" />
+    <item
+        android:id="@+id/idItemFind"
+        android:title="Найти запись по значению" />
+    <item
+        android:id="@+id/idItemSave"
+        android:title="Сохранить в файл на SD" />
+    <item
+        android:id="@+id/idItemLoad"
+        android:title="Загрузить с SD" />
+    <item
+        android:id="@+id/idItemRunnable"
+        android:title="Найти min, max, sum, aver" />
+    <item
+        android:id="@+id/idItemExit"
+        android:icon="@drawable/exit"
+        android:title="Выход"
+        app:showAsAction="ifRoom" />
+</menu>
