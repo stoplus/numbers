@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
     private ArrayAdapter adapter;
     private ArrayList arrayList;
     private Animation anim = null;
-    Resources res = getResources();//Доступ к ресурсам
+    private Resources res;//Доступ к ресурсам
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
 
         adapter = new ArrayAdapter(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
         listView.setAdapter(adapter);
+        res = getResources();//Доступ к ресурсам
     }
     //------------------------------------------------------------------------------------------------------------------------------
 
@@ -78,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements Datable {
         // Операции для выбранного пункта меню
         switch (id) {
             case R.id.idItemAdd:
+                anim = null;
                 DialogFragmentAdd dialogAdd = new DialogFragmentAdd();
                 dialogAdd.show(getSupportFragmentManager(), "dialogAdd");// отображение диалогового окна
                 break;
             case R.id.idItemDelete:
+                anim = null;
                 DialogFragmentDelete dialogDel = new DialogFragmentDelete();
                 dialogDel.show(getSupportFragmentManager(), "dialogDelete");// отображение диалогового окна
                 break;
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
                 anim = AnimationUtils.loadAnimation(this, R.anim.emergence);//анимация появление
                 break;
             case R.id.idItemFind:
+                anim = null;
                 DialogFragmentFind dialogFind = new DialogFragmentFind();
                 dialogFind.show(getSupportFragmentManager(), "dialogFind");// отображение диалогового окна
                 break;
@@ -108,10 +112,12 @@ public class MainActivity extends AppCompatActivity implements Datable {
                 anim = AnimationUtils.loadAnimation(this, R.anim.save);
                 break;
             case R.id.idItemRunnable:
+                anim = null;
                 DialogFragmentThread dialogThread = new DialogFragmentThread();
                 dialogThread.show(getSupportFragmentManager(), "dialogThread");
                 break;
             case R.id.idItemExit:
+                anim = null;
                 DialogFragmentExit dialogExit = new DialogFragmentExit();//создаем диалог только при нажатии на кнопку "Назад"
                 dialogExit.show(getSupportFragmentManager(), "dialogExit");//показываем диалог
                 break;
