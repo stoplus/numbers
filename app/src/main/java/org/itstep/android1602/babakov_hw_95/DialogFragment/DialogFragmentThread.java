@@ -83,10 +83,9 @@ public class DialogFragmentThread extends DialogFragment {
         t.start();
 
         return builder
-                .setTitle("Вывод данных")
-                .setMessage("Параллельная обработка в Runnable")
+                .setTitle(R.string.Enter_data)
                 .setIcon(R.drawable.info)
-                .setPositiveButton("Назад", null) // не назначаем слушателя кликов по кнопке
+                .setPositiveButton(R.string.back, null) // не назначаем слушателя кликов по кнопке
                 .setView(view)
                 .create();
     } // onCreateDialog

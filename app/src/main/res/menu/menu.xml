@@ -4,31 +4,31 @@
 
     <item
         android:id="@+id/idItemAdd"
-        android:title="Добавить запись" />
+        android:title="@string/add_entry" />
     <item
         android:id="@+id/idItemDelete"
-        android:title="Удалить запись" />
+        android:title="@string/delete_entry" />
     <item
         android:id="@+id/idItemSortByValue"
-        android:title="Сортировать по значению" />
+        android:title="@string/Sort_by_value" />
     <item
         android:id="@+id/idItemSortByKey"
-        android:title="Сортировать по ключу" />
+        android:title="@string/Sort_by_key" />
     <item
         android:id="@+id/idItemFind"
-        android:title="Найти запись по значению" />
+        android:title="@string/Find_entry_by_value" />
     <item
         android:id="@+id/idItemSave"
-        android:title="Сохранить в файл на SD" />
+        android:title="@string/Save_in_file_by_SD" />
     <item
         android:id="@+id/idItemLoad"
-        android:title="Загрузить с SD" />
+        android:title="@string/Load_from_SD" />
     <item
         android:id="@+id/idItemRunnable"
-        android:title="Найти min, max, sum, aver" />
+        android:title="@string/find_min_max_sum_aver" />
     <item
         android:id="@+id/idItemExit"
         android:icon="@drawable/exit"
-        android:title="Выход"
+        android:title="@string/exit"
         app:showAsAction="ifRoom" />
 </menu>

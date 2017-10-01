@@ -40,8 +40,8 @@ public class DialogFragmentDelete extends DialogFragment {
        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder
-                .setTitle("Удаление записи")
-                .setMessage("Введите значение ключа удаляемой записи")
+                .setTitle(R.string.del_entry)
+                .setMessage(R.string.enter_value_key_del_entry)
                 .setIcon(R.drawable.remove)
                 .setView(R.layout.activity_delete);
 
@@ -60,11 +60,11 @@ public class DialogFragmentDelete extends DialogFragment {
                             int key = Integer.parseInt(keyET.getText().toString());
 
                             if (keyET == null) {
-                                Toast toast = Toast.makeText(getActivity(), "Заполните поле!", Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(getActivity(), R.string.Fill_fields, Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             } else if (!repHashMap.getHashMap().containsKey(key)) {//repHashMap делаем static
-                                Toast toast = Toast.makeText(getActivity(), "Такого ключа нет!", Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(getActivity(), R.string.no_such_key, Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             } else {
@@ -73,7 +73,7 @@ public class DialogFragmentDelete extends DialogFragment {
                                 dialog.dismiss();//закрываем диалог
                             }//if
                         } catch (NumberFormatException e) {
-                            Toast toast = Toast.makeText(getActivity(), "Заполните поле!", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getActivity(), R.string.Fill_fields, Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }//try-catch

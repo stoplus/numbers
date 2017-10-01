@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="минимальное значение"
+        android:hint="@string/min_value"
         android:inputType="number|numberSigned|numberDecimal"
         android:textAlignment="center" />
 
@@ -17,7 +17,7 @@
         android:id="@+id/idEditTextMax"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="максимальное значение"
+        android:hint="@string/max_value"
         android:inputType="number|numberSigned|numberDecimal"
         android:textAlignment="center" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="find"
-            android:text="Найти" />
+            android:text="@string/find" />
 
         <Button
             android:id="@+id/idBtnExit"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="exit"
-            android:text="Назад" />
+            android:text="@string/back" />
 
     </LinearLayout>
 

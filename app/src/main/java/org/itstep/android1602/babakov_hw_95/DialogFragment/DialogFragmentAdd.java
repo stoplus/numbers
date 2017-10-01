@@ -38,8 +38,8 @@ public class DialogFragmentAdd extends DialogFragment {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        builder.setTitle("Добавление новой записи")
-                .setMessage("Введите данные")
+        builder.setTitle(R.string.add_new_entry)
+                .setMessage(R.string.enter_entry)
                 .setIcon(R.drawable.add)
                 .setView(R.layout.activity_add);
 
@@ -58,7 +58,7 @@ public class DialogFragmentAdd extends DialogFragment {
                             valueET = (EditText) getDialog().findViewById(R.id.idEditTextValue);
 
                             if (keyET == null || valueET == null) {
-                                Toast toast = Toast.makeText(getActivity(), "Заполните поля!", Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(getActivity(), R.string.Fill_fields, Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             } else {
@@ -70,7 +70,7 @@ public class DialogFragmentAdd extends DialogFragment {
                                 dialog.dismiss();
                             }//if
                         } catch (NumberFormatException e) {
-                            Toast toast = Toast.makeText(getActivity(), "Заполните поля!", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getActivity(), R.string.Fill_fields, Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }//try-catch

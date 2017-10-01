@@ -18,16 +18,16 @@ public class DialogFragmentExit extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(current);
 
         return builder
-                .setTitle("Выход")
-                .setMessage("Вы уверены?")
+                .setTitle(R.string.exit)
+                .setMessage(R.string.you_sure)
                 .setIcon(R.drawable.exit)
-                .setNegativeButton("Да", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.Yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         current.finish();
                     }
                 })
-                .setPositiveButton("Нет", null) // не назначаем слушателя кликов по кнопке "Нет"
+                .setPositiveButton(R.string.No, null) // не назначаем слушателя кликов по кнопке "Нет"
                 .setCancelable(false)           // запрет закрытия диалога кнопкой Назад
                 .create();
     } // onCreateDialog

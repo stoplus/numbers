@@ -9,7 +9,7 @@
         android:id="@+id/idEditTextKeyDel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Введите удаляемый ключ"
+        android:hint="@string/enter_delete_key"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Удалить" />
+            android:text="@string/delete" />
 
         <Button
             android:id="@+id/idBtnBack"
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Назад" />
+            android:text="@string/back" />
 
     </LinearLayout>
 

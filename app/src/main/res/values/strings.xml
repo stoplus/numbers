@@ -1,4 +1,44 @@
 <resources>
     <string name="app_name">Числа</string>
+    <string name="add_entry">Добавить запись</string>
+    <string name="delete_entry">Удалить запись</string>
+    <string name="Sort_by_value">Сортировать по значению</string>
+    <string name="Sort_by_key">Сортировать по ключу</string>
+    <string name="Find_entry_by_value">Найти запись по значению</string>
+    <string name="Save_in_file_by_SD">Сохранить в файл на SD</string>
+    <string name="Load_from_SD">Загрузить с SD</string>
+    <string name="find_min_max_sum_aver">Найти min, max, sum, aver</string>
+    <string name="exit">Выход</string>
+    <string name="Enter_value_of_key">Введите значение ключа</string>
+    <string name="Enter_value_of_value">Введите ключевое число</string>
+    <string name="add">Добавить</string>
+    <string name="back">Назад</string>
+    <string name="delete">Удалить</string>
+    <string name="enter_delete_key">Введите удаляемый ключ</string>
+    <string name="min_value">минимальное значение</string>
+    <string name="min_value_">минимальное значение:</string>
+    <string name="max_value">максимальное значение</string>
+    <string name="max_value_">максимальное значение:</string>
+    <string name="summ_values_">Сумма значений:</string>
+    <string name="aver_values_">Среднее значение:</string>
+    <string name="find">Найти</string>
+    <string name="add_new_entry">Добавление новой записи</string>
+    <string name="enter_entry">Введите данные</string>
+    <string name="Fill_fields">Заполните поля!</string>
+    <string name="del_entry">Удаление записи</string>
+    <string name="enter_value_key_del_entry">Введите значение ключа удаляемой записи</string>
+    <string name="no_such_key">Такого ключа нет!</string>
+    <string name="you_sure">Вы уверены?</string>
+    <string name="Yes">Да</string>
+    <string name="No">Нет</string>
+    <string name="Entering_Values">Ввод значений</string>
+    <string name="Enter_range_values">Введите диапазон значений</string>
+    <string name="Enter_data">Вывод данных</string>
+    <string name="SD_card_not_available">SD-карта не доступна: </string>
+    <string name="File_saved_to_SD_card">Файл сохранен на SD карте</string>
+    <string name="Error_writing_file">Ошибка при записи файла:</string>
+    <string name="file_not_found">Файл не найден </string>
+    <string name="file_open_from_SD_card">Файл открыт с SD карты</string>
+    <string name="Make_save">Сделайте сохранение</string>
 
 </resources>

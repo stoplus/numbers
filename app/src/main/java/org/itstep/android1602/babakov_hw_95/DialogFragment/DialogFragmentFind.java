@@ -42,8 +42,8 @@ public class DialogFragmentFind extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder
-                .setTitle("Ввод значений")
-                .setMessage("Введите диапазон значений")
+                .setTitle(R.string.Entering_Values)
+                .setMessage(R.string.Enter_range_values)
                 .setIcon(R.drawable.info)
                 .setView(R.layout.activity_find);
 
@@ -73,7 +73,7 @@ public class DialogFragmentFind extends DialogFragment {
                                 dialog.dismiss();//закрываем диалог
 //                            }//if
                         } catch (NumberFormatException e) {
-                            Toast toast = Toast.makeText(getActivity(), "Заполните поля!", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getActivity(), R.string.Fill_fields, Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }//try-catch

@@ -1,6 +1,7 @@
 package org.itstep.android1602.babakov_hw_95;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
     private ArrayAdapter adapter;
     private ArrayList arrayList;
     private Animation anim = null;
+    Resources res = getResources();//Доступ к ресурсам
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
     private void saveText() {
         // проверяем доступность SD
         if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            Toast toast = Toast.makeText(this, "SD-карта не доступна: " + Environment.getExternalStorageState(), Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, res.getString(R.string.SD_card_not_available) + Environment.getExternalStorageState(), Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
             toast.show();
             return;
@@ -163,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements Datable {
             }
             fos.write(bf.array());
 
-            Toast.makeText(this, "Файл сохранен на SD карте", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, res.getString(R.string.File_saved_to_SD_card), Toast.LENGTH_SHORT).show();
         } catch (Exception ex) {
-            Toast.makeText(this, "Ошибка при записи файла:" + ex.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, res.getString(R.string.Error_writing_file) + ex.getMessage(), Toast.LENGTH_LONG).show();
         } // try-catch
     } // saveText
 
@@ -174,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
     private void loadTextTel() {
         // проверяем доступность SD
         if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            Toast.makeText(this, "SD-карта не доступна: " + Environment.getExternalStorageState(),
+            Toast.makeText(this, res.getString(R.string.SD_card_not_available) + Environment.getExternalStorageState(),
                     Toast.LENGTH_LONG).show();
             return;
         }
@@ -190,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
 
         // если файл не существует, выход из метода
         if (!file.exists()) {
-            Toast.makeText(this, "Файл не найден: " + sdPath + "/" + FILE_NAME,
+            Toast.makeText(this, res.getString(R.string.file_not_found) + sdPath + "/" + FILE_NAME,
                     Toast.LENGTH_LONG).show();
             return;
         }
@@ -212,9 +214,9 @@ public class MainActivity extends AppCompatActivity implements Datable {
                 repHashMap.add(key, value);
             }
             show();
-            Toast.makeText(this, "Файл открыт с SD карты", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, res.getString(R.string.file_open_from_SD_card), Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
-            Toast.makeText(this, "Файл не найден!\nСделайте сохранение", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, res.getString(R.string.file_not_found) +"\n" + res.getString(R.string.Make_save), Toast.LENGTH_LONG).show();
         } catch (Exception ex) {
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
         } // try-catch
