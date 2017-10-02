@@ -17,7 +17,6 @@ import android.support.v4.app.DialogFragment;
 import org.itstep.android1602.babakov_hw_95.Datable;
 import org.itstep.android1602.babakov_hw_95.R;
 
-import static org.itstep.android1602.babakov_hw_95.MainActivity.repHashMap;
 
 public class DialogFragmentFind extends DialogFragment {
     private EditText minET;

@@ -1,6 +1,5 @@
 package org.itstep.android1602.babakov_hw_95;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Environment;
 import android.os.Handler;
@@ -15,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import org.itstep.android1602.babakov_hw_95.DialogFragment.DialogFragmentAdd;
 import org.itstep.android1602.babakov_hw_95.DialogFragment.DialogFragmentDelete;
 import org.itstep.android1602.babakov_hw_95.DialogFragment.DialogFragmentExit;
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements Datable {
     private String FILE_NAME = "BinaryFile.bin";
     private final static String DIR_SD = "BinaryFolder";
     public static RepositoryHM repHashMap;
-    private ArrayAdapter adapter;
-    private ArrayList arrayList;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> arrayList;
     private Animation anim = null;
     private Resources res;//Доступ к ресурсам
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
         repHashMap.setHashMap(repHashMap.sortByKey(repHashMap.getHashMap()));//сортируем по увеличению ключа
         arrayList = repHashMap.getArrayListString();//готовим для адаптера список
 
-        adapter = new ArrayAdapter(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
+        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
         listView.setAdapter(adapter);
         res = getResources();//Доступ к ресурсам
     }
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
         Animation anim;
         arrayList = repHashMap.getArrayListString();//готовим для адаптера список
         //adapter.notifyDataSetChanged();//не пашет
-        adapter = new ArrayAdapter(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
+        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
         listView.setAdapter(adapter);
         anim = AnimationUtils.loadAnimation(this, R.anim.emergence);//анимация появление
         if (anim != null) listView.startAnimation(anim);
@@ -165,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements Datable {
             int capacity = (Double.BYTES + Integer.BYTES) * repHashMap.getHashMap().size();
             ByteBuffer bf = ByteBuffer.allocate(capacity);
 
-            for (Map.Entry entry : repHashMap.getHashMap().entrySet()) {
-                bf.putInt((Integer) entry.getKey());
-                bf.putDouble((Double) entry.getValue());
+            for (Map.Entry<Integer, Double> entry : repHashMap.getHashMap().entrySet()) {
+                bf.putInt(entry.getKey());
+                bf.putDouble(entry.getValue());
             }
             fos.write(bf.array());
 
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
             show();
             Toast.makeText(this, res.getString(R.string.file_open_from_SD_card), Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
-            Toast.makeText(this, res.getString(R.string.file_not_found) +"\n" + res.getString(R.string.Make_save), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, res.getString(R.string.file_not_found) + "\n" + res.getString(R.string.Make_save), Toast.LENGTH_LONG).show();
         } catch (Exception ex) {
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
         } // try-catch
@@ -230,7 +230,8 @@ public class MainActivity extends AppCompatActivity implements Datable {
     //-----------------------------------------------------------------------------------------------------------------------------
 
     // Перехватчик нажатия клавиши Назад для текущей активности - вызвать диалог выхода
-    @Override public void onBackPressed() {
+    @Override
+    public void onBackPressed() {
         // отображение диалогового окна
         DialogFragmentExit dialogExit = new DialogFragmentExit();//создаем диалог только при нажатии на кнопку "Назад"
         dialogExit.show(getSupportFragmentManager(), "dialogExit");//показываем диалог
@@ -251,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements Datable {
             public void run() {
                 repHashMap.add(key, value);//добавляем в список
                 arrayList = repHashMap.getArrayListString();//готовим для адаптера список
-                adapter = new ArrayAdapter(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
+                adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.activity_item, R.id.idTVItem, arrayList);//создаем адаптер
                 // TODO: при дефолтном  исполнении адаптера цифры почему-то становятся белыми(на API 21)
 //                adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
 
