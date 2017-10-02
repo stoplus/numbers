@@ -9,8 +9,8 @@
     <string name="Load_from_SD">Загрузить с SD</string>
     <string name="find_min_max_sum_aver">Найти min, max, sum, aver</string>
     <string name="exit">Выход</string>
-    <string name="Enter_value_of_key">Введите значение ключа</string>
-    <string name="Enter_value_of_value">Введите ключевое число</string>
+    <string name="Enter_value_of_key">Введите ключ</string>
+    <string name="Enter_value_of_value">Введите значение</string>
     <string name="add">Добавить</string>
     <string name="back">Назад</string>
     <string name="delete">Удалить</string>
